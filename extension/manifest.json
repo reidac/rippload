@@ -1,24 +1,25 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "Rippload",
   "description": "Ripple-loads some tabs.",
-  "version": "1.0",
+  "version": "1.1",
 
-  "browser_action": {
+  "action": {
     "default_icon": "rippload.png",
     "default_title": "Ripple Loader",
     "default_popup": "rippop.html"
   },
 
   "background": {
-    "scripts": ["rippload.js"], 
-    "persistent": true
+    "service_worker": "rippload.js"
   },
 
   "permissions": [
      "activeTab",
-     "bookmarks",
+     "bookmarks"
+   ],
+   "host_permissions": [ 
      "https://ajax.googleapis.com/"
    ]
 }
